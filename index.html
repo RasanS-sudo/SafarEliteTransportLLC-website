@@ -343,7 +343,7 @@
             <div id="successMessage" class="success-message">
                 Thank you! Your booking request has been received. We'll contact you shortly to confirm.
             </div>
-            <form id="bookingForm">
+            <form id="bookingForm" action="https://formspree.io/f/xwvkonnz" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" required>
@@ -420,35 +420,17 @@
 
     <script>
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Scroll to success message
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
+            // Let Formspree handle the submission
+            // Show success message after a brief delay
             setTimeout(function() {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 5000);
-            
-            // In a real implementation, you would send this data to your server
-            // Example using fetch:
-            /*
-            const formData = new FormData(this);
-            fetch('/api/booking', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            });
-            */
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            }, 500);
         });
 
         // Smooth scrolling for navigation links
