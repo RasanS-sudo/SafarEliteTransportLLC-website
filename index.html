@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaFaR Elite LLC - Premium Chauffeur Services</title>
+    <title>SaFaR Elite LLC - Executive Chauffeur Services</title>
     <style>
         * {
             margin: 0;
@@ -12,247 +12,433 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #fafafa;
         }
 
         header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            padding: 1rem 0;
+            background: linear-gradient(to right, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 1.2rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border-bottom: 1px solid #c9a961;
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 3rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 1.6rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            font-family: 'Garamond', serif;
+            text-transform: uppercase;
+            color: #c9a961;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-weight: 300;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover {
-            color: #d4af37;
+            color: #c9a961;
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23222" width="1200" height="600"/><path fill="%23333" d="M0 300L100 280L200 320L300 290L400 310L500 285L600 305L700 295L800 315L900 290L1000 310L1100 295L1200 305V600H0Z"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23111111"/><stop offset="100%" style="stop-color:%23222222"/></linearGradient></defs><rect fill="url(%23g)" width="1920" height="1080"/><circle cx="960" cy="540" r="400" fill="%23181818" opacity="0.3"/></svg>');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 60px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 2rem;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c9a961;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.4rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
 
         .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
 
         .cta-button {
-            background: #d4af37;
-            color: white;
-            padding: 1rem 2.5rem;
+            background: #c9a961;
+            color: #0a0a0a;
+            padding: 1.2rem 3rem;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.3s;
+            border-radius: 2px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 25px rgba(201, 169, 97, 0.3);
+            border: 1px solid #c9a961;
         }
 
         .cta-button:hover {
-            background: #c19b2b;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+            background: transparent;
+            color: #c9a961;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(201, 169, 97, 0.5);
         }
 
         .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
+            padding: 6rem 2rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .section h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 3rem;
-            color: #1a1a1a;
+            margin-bottom: 1rem;
+            color: #0a0a0a;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section .subtitle-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 4rem;
+            font-style: italic;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0 5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .badge-icon {
+            font-size: 2.5rem;
+            color: #c9a961;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge h4 {
+            font-size: 1rem;
+            color: #0a0a0a;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            background: #ffffff;
+            padding: 2.5rem;
+            border: 1px solid #e0e0e0;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #c9a961, #0a0a0a);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            border-color: #c9a961;
         }
 
         .service-card h3 {
-            color: #d4af37;
+            color: #0a0a0a;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
         }
 
         .booking-section {
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-top: 1px solid #c9a961;
+            border-bottom: 1px solid #c9a961;
         }
 
         .form-container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: #ffffff;
+            padding: 3rem;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             font-weight: 600;
-            color: #333;
+            color: #0a0a0a;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
+            padding: 1rem;
+            border: 1px solid #d0d0d0;
+            background: #fafafa;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            font-family: inherit;
+            transition: all 0.3s;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #d4af37;
+            border-color: #c9a961;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
         }
 
         .submit-btn {
-            background: #d4af37;
-            color: white;
-            padding: 1rem 3rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            background: #0a0a0a;
+            color: #c9a961;
+            padding: 1.2rem 3rem;
+            border: 1px solid #0a0a0a;
+            font-size: 0.95rem;
             cursor: pointer;
             width: 100%;
-            font-weight: bold;
-            transition: all 0.3s;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            font-family: inherit;
         }
 
         .submit-btn:hover {
-            background: #c19b2b;
+            background: transparent;
+            color: #0a0a0a;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .pricing-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: #ffffff;
+            padding: 2.5rem;
+            border: 1px solid #e0e0e0;
             text-align: center;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .pricing-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #c9a961, #0a0a0a);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .pricing-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            border-color: #c9a961;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0a0a0a;
         }
 
         .price {
-            font-size: 2.5rem;
-            color: #d4af37;
-            font-weight: bold;
-            margin: 1rem 0;
+            font-size: 2.8rem;
+            color: #c9a961;
+            font-weight: 300;
+            margin: 1.5rem 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .pricing-card p {
+            color: #555;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
         }
 
         footer {
-            background: #1a1a1a;
-            color: white;
+            background: linear-gradient(to right, #0a0a0a 0%, #1a1a1a 100%);
+            color: #c9a961;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
+            border-top: 1px solid #c9a961;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
         .success-message {
             display: none;
-            background: #4CAF50;
-            color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
+            background: #0a0a0a;
+            color: #c9a961;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             text-align: center;
+            border: 1px solid #c9a961;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .nav-links {
                 gap: 1rem;
-                font-size: 0.9rem;
+                font-size: 0.8rem;
             }
 
             .section {
-                padding: 3rem 1rem;
+                padding: 4rem 1rem;
+            }
+
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
             }
         }
     </style>
@@ -265,7 +451,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#booking">Reserve</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -273,83 +459,111 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Premium Chauffeur Services</h1>
-            <p>Experience luxury, comfort, and professionalism in every ride</p>
-            <a href="#booking" class="cta-button">Book Your Ride</a>
+            <h1>Executive Transportation</h1>
+            <div class="subtitle">Discreet. Professional. Secure.</div>
+            <p>Providing premium chauffeur services for diplomats, dignitaries, executives, and discerning clients. Experience unparalleled discretion, professionalism, and comfort with our elite transportation solutions.</p>
+            <a href="#booking" class="cta-button">Reserve Your Service</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="trust-badges">
+            <div class="badge">
+                <div class="badge-icon">🛡️</div>
+                <h4>Fully Insured</h4>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">✓</div>
+                <h4>Background Checked</h4>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🔒</div>
+                <h4>Confidential Service</h4>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">24/7</div>
+                <h4>Available 24/7</h4>
+            </div>
         </div>
     </section>
 
     <section id="services" class="section">
         <h2>Our Services</h2>
+        <p class="subtitle-text">Tailored transportation solutions for distinguished clientele</p>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Airport Transfers</h3>
-                <p>Reliable and punctual airport transportation. Flight tracking included to ensure we're there when you land.</p>
+                <h3>Diplomatic Transport</h3>
+                <p>Specialized secure transportation for diplomats and embassy personnel with absolute discretion and protocol adherence. Our chauffeurs are trained in diplomatic etiquette and security procedures.</p>
             </div>
             <div class="service-card">
-                <h3>Corporate Travel</h3>
-                <p>Professional chauffeur services for business meetings, conferences, and corporate events.</p>
+                <h3>Executive Travel</h3>
+                <p>Premium chauffeur services for C-suite executives and business leaders. Productive mobile office environment with privacy partition and complimentary amenities.</p>
+            </div>
+            <div class="service-card">
+                <h3>Airport Transfers</h3>
+                <p>Punctual and seamless airport transportation with flight tracking, meet-and-greet service, and luggage assistance. Available for domestic and international arrivals.</p>
+            </div>
+            <div class="service-card">
+                <h3>Government Officials</h3>
+                <p>Secure and professional transportation for political figures and government officials. Enhanced security protocols and route planning available upon request.</p>
             </div>
             <div class="service-card">
                 <h3>Special Events</h3>
-                <p>Weddings, proms, anniversaries, and celebrations. Make your special day even more memorable.</p>
+                <p>Elegant transportation for galas, conferences, weddings, and exclusive events. Red carpet service and coordination with event planners available.</p>
             </div>
             <div class="service-card">
-                <h3>Hourly Service</h3>
-                <p>Flexible hourly rentals for shopping, tours, or multiple stops throughout your day.</p>
-            </div>
-            <div class="service-card">
-                <h3>Long Distance</h3>
-                <p>Comfortable travel for longer journeys. Enjoy the ride while we handle the driving.</p>
-            </div>
-            <div class="service-card">
-                <h3>VIP Service</h3>
-                <p>Premium experience with luxury vehicles, refreshments, and personalized attention.</p>
+                <h3>Extended Services</h3>
+                <p>Full-day or multi-day transportation solutions for conferences, tours, and extended business engagements. Customized itineraries and flexible scheduling available.</p>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="section" style="background: #f5f5f5;">
-        <h2>Pricing</h2>
+    <section id="pricing" class="section" style="background: #fafafa;">
+        <h2>Transparent Pricing</h2>
+        <p class="subtitle-text">Competitive rates for exceptional service</p>
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>Airport Transfer</h3>
-                <div class="price">$85</div>
-                <p>One-way to/from airport</p>
-                <p>Meet & greet included</p>
-                <p>Flight tracking</p>
+                <div class="price">$75</div>
+                <p>One-way premium service</p>
+                <p>Flight tracking included</p>
+                <p>30 minutes complimentary wait time</p>
+                <p>Meet & greet service</p>
             </div>
             <div class="pricing-card">
                 <h3>Hourly Rate</h3>
-                <div class="price">$75/hr</div>
+                <div class="price">$65/hr</div>
                 <p>Minimum 3 hours</p>
-                <p>Perfect for events</p>
                 <p>Flexible scheduling</p>
+                <p>Multiple destination stops</p>
+                <p>Professional chauffeur</p>
             </div>
             <div class="pricing-card">
-                <h3>Full Day</h3>
-                <div class="price">$650</div>
-                <p>Up to 8 hours</p>
+                <h3>Full Day Service</h3>
+                <div class="price">$575</div>
+                <p>Up to 10 hours</p>
                 <p>Unlimited stops</p>
-                <p>Best value option</p>
+                <p>Dedicated chauffeur</p>
+                <p>Premium value option</p>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 2rem; color: #666;">*Prices may vary based on distance, vehicle type, and special requests. Contact us for a custom quote.</p>
+        <p style="text-align: center; margin-top: 3rem; color: #666; font-style: italic;">Custom packages available for diplomatic missions, extended contracts, and specialized security requirements.</p>
     </section>
 
     <section id="booking" class="section booking-section">
-        <h2>Book Your Ride</h2>
+        <h2>Reserve Your Service</h2>
+        <p class="subtitle-text">Experience executive transportation excellence</p>
         <div class="form-container">
             <div id="successMessage" class="success-message">
-                Thank you! Your booking request has been received. We'll contact you shortly to confirm.
+                Thank you for your reservation request. Our team will contact you within 2 hours to confirm your booking.
             </div>
-            <form id="bookingForm" action="https://formspree.io/f/xwvkonnz" method="POST">
+            <form action="https://formspree.io/f/xwvkonnz" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email *</label>
+                    <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
@@ -360,16 +574,18 @@
                     <label for="service">Service Type *</label>
                     <select id="service" name="service" required>
                         <option value="">Select a service</option>
+                        <option value="diplomatic">Diplomatic Transport</option>
+                        <option value="executive">Executive Travel</option>
                         <option value="airport">Airport Transfer</option>
-                        <option value="corporate">Corporate Travel</option>
+                        <option value="government">Government Officials</option>
                         <option value="event">Special Event</option>
+                        <option value="extended">Extended Services</option>
                         <option value="hourly">Hourly Service</option>
-                        <option value="longdistance">Long Distance</option>
-                        <option value="vip">VIP Service</option>
+                        <option value="fullday">Full Day Service</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="date">Date *</label>
+                    <label for="date">Service Date *</label>
                     <input type="date" id="date" name="date" required>
                 </div>
                 <div class="form-group">
@@ -378,36 +594,36 @@
                 </div>
                 <div class="form-group">
                     <label for="pickup">Pick-up Location *</label>
-                    <input type="text" id="pickup" name="pickup" placeholder="Enter address" required>
+                    <input type="text" id="pickup" name="pickup" placeholder="Enter full address" required>
                 </div>
                 <div class="form-group">
-                    <label for="dropoff">Drop-off Location *</label>
-                    <input type="text" id="dropoff" name="dropoff" placeholder="Enter address" required>
+                    <label for="dropoff">Destination *</label>
+                    <input type="text" id="dropoff" name="dropoff" placeholder="Enter full address" required>
                 </div>
                 <div class="form-group">
                     <label for="passengers">Number of Passengers *</label>
-                    <input type="number" id="passengers" name="passengers" min="1" max="8" required>
+                    <input type="number" id="passengers" name="passengers" min="1" max="6" required>
                 </div>
                 <div class="form-group">
-                    <label for="notes">Special Requests</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="Any special requirements or requests?"></textarea>
+                    <label for="notes">Special Requirements</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Security requirements, protocol preferences, or special requests"></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Request Booking</button>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                    Payment details will be provided upon booking confirmation
+                <button type="submit" class="submit-btn">Submit Reservation</button>
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: #666; font-style: italic;">
+                    Payment arrangements and final confirmation will be provided upon booking approval. We accept all major payment methods.
                 </p>
             </form>
         </div>
     </section>
 
     <section id="contact" class="section">
-        <h2>Contact Us</h2>
+        <h2>Contact Information</h2>
+        <p class="subtitle-text">Available 24/7 for your transportation needs</p>
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Have questions? We're here to help!</p>
-            <p><strong>Phone:</strong> (555) 123-4567</p>
-            <p><strong>Email:</strong> sami.salhi@safarelitellc.com</p>
-            <p><strong>Hours:</strong> Available 24/7</p>
-            <div style="margin-top: 2rem;">
+            <p style="margin: 1.5rem 0;"><strong>Phone:</strong> (555) 123-4567</p>
+            <p style="margin: 1.5rem 0;"><strong>Email:</strong> sami.salhi@safarelitellc.com</p>
+            <p style="margin: 1.5rem 0;"><strong>Service Area:</strong> Washington DC Metro Area</p>
+            <div style="margin-top: 3rem;">
                 <a href="tel:5551234567" class="cta-button">Call Now</a>
             </div>
         </div>
@@ -415,24 +631,10 @@
 
     <footer>
         <p>&copy; 2025 SaFaR Elite LLC. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Professional. Punctual. Premium.</p>
+        <p style="margin-top: 1rem;">Professional Executive Transportation Services</p>
     </footer>
 
     <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            // Let Formspree handle the submission
-            // Show success message after a brief delay
-            setTimeout(function() {
-                document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Hide success message after 5 seconds
-                setTimeout(function() {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
-            }, 500);
-        });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -445,6 +647,25 @@
                     });
                 }
             });
+        });
+
+        // Form submission handling - Formspree will handle the actual submission
+        const form = document.querySelector('form');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            // Let Formspree handle the submission naturally
+            // Show success message after form submits
+            setTimeout(function() {
+                successMessage.style.display = 'block';
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                form.reset();
+                
+                // Hide success message after 7 seconds
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                }, 7000);
+            }, 1000);
         });
     </script>
 </body>
